@@ -1,4 +1,4 @@
-ELFO: A C-lang ELF Library Parser
+# ELFO: A C-lang ELF Library Parser
 
 ![](assets/elfo.png)
 
