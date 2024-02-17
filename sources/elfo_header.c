@@ -27,7 +27,7 @@ const bool is_elf(const Elf32_Ehdr *eh)
 	return (!strncmp((char *)eh->e_ident, "\177ELF", 4)) ? true : false;
 }
 
-const char* get_endianess(const Elf32_Ehdr *eh){
+const char* get_endianness(const Elf32_Ehdr *eh){
 	switch(eh->e_ident[EI_DATA]){
 		case ELFDATA2LSB:
 			return "Little Endian";
