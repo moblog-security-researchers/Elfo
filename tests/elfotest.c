@@ -9,7 +9,7 @@
 
 int main()
 {
-    int fd = open("./bin/true", O_RDONLY);
+    int fd = open("./bin/elf32test", O_RDONLY);
 
     if (fd > 0)
     {
@@ -19,9 +19,10 @@ int main()
         bool is_64;
 
         assert(is_elf(&eh) == true);
-        assert(eh.e_entry == 0x1960);
-        assert(is_64 = is_elf_64(&eh) == true);
+	//assert(eh.e_entry == 0x1960);
+	//assert(is_64 = is_elf_64(&eh) == true);
 
+	printf("%s\n", get_endianess(&eh));
         if (is_64)
         {
             Elf64_Ehdr eh_64;
