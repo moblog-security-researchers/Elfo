@@ -22,7 +22,7 @@ int main()
 	//assert(eh.e_entry == 0x1960);
 	//assert(is_64 = is_elf_64(&eh) == true);
 
-	printf("%s\n", get_endianess(&eh));
+	printf("%s\n", get_endianness(&eh));
         if (is_64)
         {
             Elf64_Ehdr eh_64;
