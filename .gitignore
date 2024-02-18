@@ -4,3 +4,4 @@ CMakeFiles
 *.cmake
 Makefile
 CMakeCache.txt
+*.swp

@@ -16,27 +16,16 @@ int main()
         Elf32_Ehdr eh;
         read_elf_header(fd, &eh);
         
-        bool is_64;
-
-        assert(is_elf(&eh) == true);
-	//assert(eh.e_entry == 0x1960);
-	//assert(is_64 = is_elf_64(&eh) == true);
-
-	printf("%s\n", get_endianness(&eh));
-        if (is_64)
-        {
-            Elf64_Ehdr eh_64;
-            read_elf_header_64(fd, &eh_64);
-
-            Elf64_Shdr *sh_64 = malloc(eh_64.e_shentsize * eh_64.e_shnum);
-
-            read_section_header_table_64(fd, sh_64, eh_64);            
-
-            free(sh_64);
-        }
-
-        close(fd);
+      
+	printf("0x%x\n", get_endianness(&eh));
+	printf("0x%x\n", get_elf_version(&eh));
+	printf("0x%x\n", get_osabi(&eh));
+	printf("0x%x\n", get_osabi_version(&eh));
+	printf("0x%x\n", get_elf_type(&eh));
+	printf("0x%x\n", get_elf_machine(&eh));
+	printf("0x%x\n", get_elf_entry(&eh));
+	printf("0x%x\n", get_elf_phoffset(&eh));
+	printf("0x%x\n", get_elf_shoffset(&eh));
     }
-
     return 0;
 }
